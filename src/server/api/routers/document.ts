@@ -12,7 +12,7 @@ async function getPdfContent(buffer: Buffer): Promise<{ pages: { number: number;
 	    apiKey: env.LLAMA_CLOUD_API_KEY 
 	  });
     const docs = await reader.loadDataAsContent(buffer);
-
+    console.log("PDF content:", docs);
     return {
       pages: docs.map((doc, index) => ({
         number: index + 1,
